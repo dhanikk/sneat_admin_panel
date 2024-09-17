@@ -67,6 +67,8 @@ return [
 
     'timezone' => env('APP_TIMEZONE', 'UTC'),
 
+    'admin_theme' => env('ADMIN_THEME', 'materialize'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Locale Configuration
