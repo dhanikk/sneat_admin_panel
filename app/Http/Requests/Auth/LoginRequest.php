@@ -27,7 +27,12 @@ class LoginRequest extends FormRequest
         ];
     }
 
-    public function messages()
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
+     */
+    public function messages(): array
     {
         return [
             'email.required' => 'The email field is required.',

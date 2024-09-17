@@ -7,10 +7,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\Auth\LoginRequest;
+use Illuminate\Http\JsonResponse;
 
 class LoginController extends Controller
 {
-    public function login(LoginRequest $request)
+    /** @return JsonResponse The JSON response indicating the result of the login attempt.*/
+    public function login(LoginRequest $request): JsonResponse
     {
         // Attempt to log the user in
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
