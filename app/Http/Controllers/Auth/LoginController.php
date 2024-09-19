@@ -23,4 +23,9 @@ class LoginController extends Controller
         // Authentication failed
         return response()->json(['success' => false, 'message' => 'Invalid email or password.' ], 401);
     }
+
+    public function logout () {
+        Auth::logout();  // Log the user out
+        return redirect('/login');  // Redirect to login page
+    }
 }
