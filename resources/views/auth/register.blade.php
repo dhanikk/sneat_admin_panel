@@ -16,28 +16,48 @@
               </a>
             </div>
             <!-- /Logo -->
-            <h4 class="mb-2" data-i18n="login.welcome_to">{{ __('login.welcome_to')}}</h4>
-            <p class="mb-4" data-i18n="login.please_sign_in_to_your_account_text">{{ __('login.please_sign_in_to_your_account_text')}}</p>
+            <h4 class="mb-2" data-i18n="register.heading">{{ __('register.heading')}}</h4>
+            <p class="mb-4" data-i18n="register.sub_description">{{ __('register.sub_description')}}</p>
 
-            <form id="formAuthentication" class="mb-3">
+            <form id="formRegistration" class="mb-3">
+                <div class="mb-3">
+                    <label for="first_name" class="form-label" data-i18n="register.labels.first_name">{{ __('register.labels.first_name')}}</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="first_name"
+                        name="first_name"
+                        placeholder="{{ __('register.labels.first_name_placeholder')}}"
+                        autofocus
+                        data-i18n="register.labels.first_name_placeholder"
+                    />
+                </div>
+                <div class="mb-3">
+                    <label for="last_name" class="form-label" data-i18n="register.labels.last_name_placeholder">{{ __('register.labels.last_name')}}</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="last_name"
+                        name="last_name"
+                        placeholder="{{ __('register.labels.last_name_placeholder')}}"
+                        autofocus
+                        data-i18n="register.labels.last_name_placeholder"
+                    />
+                </div>
               <div class="mb-3">
-                <label for="email" class="form-label" data-i18n="login.labels.email">{{ __('login.labels.email')}}</label>
+                <label for="email" class="form-label" data-i18n="register.labels.email">{{ __('register.labels.email')}}</label>
                 <input
                   type="text"
                   class="form-control"
                   id="email"
                   name="email"
-                  placeholder="{{ __('login.labels.email_placeholder')}}"
+                  placeholder="{{ __('register.labels.email_placeholder')}}"
                   autofocus
+                  data-i18n="register.labels.email_placeholder"
                 />
               </div>
               <div class="mb-3 form-password-toggle">
-                <div class="d-flex justify-content-between">
-                  <label class="form-label" for="password" data-i18n="login.labels.password">{{ __('login.labels.password')}}</label>
-                  <a href="auth-forgot-password-basic.html">
-                    <small  data-i18n="login.labels.forgot_password">{{ __('login.labels.forgot_password')}}</small>
-                  </a>
-                </div>
+                <label for="password" class="form-label" data-i18n="register.labels.password">{{ __('register.labels.password')}}</label>
                 <div class="input-group input-group-merge">
                   <input
                     type="password"
@@ -51,21 +71,12 @@
                 </div>
               </div>
               <div class="mb-3">
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="remember-me" />
-                  <label class="form-check-label" for="remember-me"  data-i18n="login.labels.remember_me">{{ __('login.labels.remember_me')}}</label>
-                </div>
-              </div>
-              <div class="mb-3">
-                <button class="btn btn-primary d-grid w-100" type="button" onclick="submitloginform();" data-i18n="login.labels.sign_in">{{ __('login.labels.sign_in')}}</button>
+                <button class="btn btn-primary d-grid w-100" type="button" onclick="submitregistrationform();" data-i18n="register.labels.sign_up">{{ __('register.labels.sign_up')}}</button>
               </div>
             </form>
 
             <p class="text-center">
-              <span data-i18n="login.labels.new_on_our_platform">{{ __('login.labels.new_on_our_platform')}}</span>
-              <a href="{{route('register')}}">
-                <span data-i18n="login.labels.register">{{ __('login.labels.register')}}</span>
-              </a>
+              <span data-i18n="[html]register.labels.already_have_an_account">{!! __('register.labels.already_have_an_account')!!}</span>
             </p>
             <div class="btn-group float-end">
                   <button

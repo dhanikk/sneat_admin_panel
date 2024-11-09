@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LanguageController;
-use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\{LoginController, RegisterController};
 use App\Http\Controllers\{DashboardController};
 
 
@@ -14,7 +14,11 @@ Route::get('/languages/{language}/{filename}', [LanguageController::class, 'getL
 Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
+Route::get('/register', function () {
+    return view('auth.register');
+})->name('register');
 Route::post('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/register', [RegisterController::class, 'register'])->name('register');
 
 Route::group(['prefix' => 'user', 'middleware' => ['auth']], function(){
     Route::get("dashboard", function () {
