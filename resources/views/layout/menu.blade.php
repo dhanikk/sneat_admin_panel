@@ -72,7 +72,7 @@
 
         <ul class="menu-inner py-1">
             <li class="menu-item">
-                <a href="{{ route('dashboard') }}" class="menu-link">
+                <a href="{{ route('admin.dashboard') }}" class="menu-link">
                 <i class="menu-icon tf-icons mdi mdi-email-outline"></i>
                 <div data-i18n="Email">Dashboard</div>
                 </a>

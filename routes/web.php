@@ -2,13 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LanguageController;
-use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\User\DashboardController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\Auth\{LoginController, RegisterController};
-use App\Http\Controllers\{DashboardController};
+// use App\Http\Controllers\{DashboardController};
 Route::get('/register', function () {
     return view('auth.register');
 })->name('register');
@@ -47,6 +46,7 @@ Route::group(['middleware' => ['auth']], function(){
         Route::post('permission/moduleStore', 'moduleStore')->name('permission.module');
         Route::post('permission/delete', 'deleteSinglePermission')->name('permission.delete');
     });
+});
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
