@@ -7,7 +7,7 @@
         <div class="card">
           <div class="card-body">
             <!-- Logo -->
-            <div class="app-brand justify-content-center">
+            <div class="app-brand justify-content-center mb-4">
               <a href="index.html" class="app-brand-link gap-2">
                 <span class="app-brand-logo demo">
 
@@ -16,8 +16,8 @@
               </a>
             </div>
             <!-- /Logo -->
-            <h4 class="mb-2" data-i18n="register.heading">{{ __('register.heading')}}</h4>
-            <p class="mb-4" data-i18n="register.sub_description">{{ __('register.sub_description')}}</p>
+            <h4 class="mb-2 d-flex justify-content-center" data-i18n="register.heading">{{ __('register.heading')}}</h4>
+            <p class="mb-4 d-flex justify-content-center" data-i18n="register.sub_description">{{ __('register.sub_description')}}</p>
 
             <form id="formRegistration" class="mb-3">
                 <div class="mb-3">

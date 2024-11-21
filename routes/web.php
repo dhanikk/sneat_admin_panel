@@ -11,17 +11,31 @@ Route::get('/', function () {
 })->name('welcome');
 
 Route::get('/languages/{language}/{filename}', [LanguageController::class, 'getLanguageFile']);
+
 Route::get('/login', function () {
     return view('auth.login');
 })->name('login');
+
 Route::get('/register', function () {
     return view('auth.register');
 })->name('register');
+
 Route::post('/login', [LoginController::class, 'login'])->name('login');
 Route::post('/register', [RegisterController::class, 'register'])->name('register');
 
-Route::group(['prefix' => 'user', 'middleware' => ['auth']], function(){
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function(){
+    Route::get("/", function () {
+        return view('admin/welcome');
+    })->name('admin');
     Route::get("dashboard", function () {
-        return view('welcome');
-    })->name('dashboard');
+        return view('admin/welcome');
+    })->name('admin.dashboard');
 });
+
+
+Route::get("dashboard", function () {
+    return view('welcome');
+})->name('dashboard');
+

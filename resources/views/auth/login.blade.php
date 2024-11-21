@@ -7,17 +7,16 @@
         <div class="card">
           <div class="card-body">
             <!-- Logo -->
-            <div class="app-brand justify-content-center">
+            <div class="app-brand justify-content-center mb-4">
               <a href="index.html" class="app-brand-link gap-2">
                 <span class="app-brand-logo demo">
-
                 </span>
                 <span class="app-brand-text demo text-body fw-bolder">{{ Config::get('app.name')}}</span>
               </a>
             </div>
             <!-- /Logo -->
-            <h4 class="mb-2" data-i18n="login.welcome_to">{{ __('login.welcome_to')}}</h4>
-            <p class="mb-4" data-i18n="login.please_sign_in_to_your_account_text">{{ __('login.please_sign_in_to_your_account_text')}}</p>
+            <h4 class="mb-2 d-flex justify-content-center" data-i18n="login.welcome_to">{{ __('login.welcome_to')}}</h4>
+            <p class="mb-4 d-flex justify-content-center" data-i18n="login.please_sign_in_to_your_account_text">{{ __('login.please_sign_in_to_your_account_text')}}</p>
 
             <form id="formAuthentication" class="mb-3">
               <div class="mb-3">
